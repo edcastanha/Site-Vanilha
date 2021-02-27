@@ -1,3 +1,7 @@
+<div align="center">
+    <img src="assets/img/favicon.ico">
+</div>
+
 # WEB SITE VANILLA
 
 
