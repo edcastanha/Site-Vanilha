@@ -911,6 +911,7 @@ section {
 }
 
 .portfolio .portfolio-item {
+  position: relative;
   margin-bottom: 30px;
 }
 
@@ -924,35 +925,49 @@ section {
 
 .portfolio .portfolio-item .portfolio-info {
   opacity: 0;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  column-gap: 12px;
   position: absolute;
   left: 15px;
   bottom: 0;
   z-index: 3;
   right: 15px;
   transition: all ease-in-out 0.3s;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.65);
   padding: 10px 15px;
 }
 
 .portfolio .portfolio-item .portfolio-info h3 {
+  grid-column: 1;
+  grid-row: 1;
+  min-width: 0;
   font-size: 18px;
   color: #fff;
   font-weight: 600;
-  color: #fff;
   margin-bottom: 0px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .portfolio .portfolio-item .portfolio-info p {
+  grid-column: 1;
+  grid-row: 2;
+  min-width: 0;
   color: #f5b8ab;
   font-size: 14px;
   margin-bottom: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .portfolio .portfolio-item .portfolio-info .preview-link, .portfolio .portfolio-item .portfolio-info .details-link {
-  position: absolute;
-  right: 40px;
+  position: static;
+  grid-row: 1 / 3;
   font-size: 24px;
-  top: calc(50% - 18px);
   color: #fff;
   transition: 0.3s;
 }
@@ -961,8 +976,12 @@ section {
   color: #ff8a3d;
 }
 
+.portfolio .portfolio-item .portfolio-info .preview-link {
+  grid-column: 2;
+}
+
 .portfolio .portfolio-item .portfolio-info .details-link {
-  right: 10px;
+  grid-column: 3;
 }
 
 .portfolio .portfolio-item .portfolio-links {
