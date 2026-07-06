@@ -14,5 +14,4 @@ Para realização do deploy foi realizado a sincronização do projeto junto a V
 
 ## https://its3.com.br ##
 
-Descrição dos passo:
 
