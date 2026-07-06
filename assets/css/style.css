@@ -11,6 +11,7 @@
 body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
+  line-height: 1.5;
 }
 
 a {
@@ -354,6 +355,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #hero p {
   width: 80%;
+  max-width: 65ch;
   -webkit-animation-delay: 0.4s;
   animation-delay: 0.4s;
   margin: 0 auto 30px auto;
@@ -572,6 +574,10 @@ section {
   line-height: 1;
 }
 
+.about .content p {
+  max-width: 65ch;
+}
+
 .about .content p:last-child {
   margin-bottom: 0;
 }
@@ -699,6 +705,7 @@ section {
 
 .cta p {
   color: #fff;
+  max-width: 65ch;
 }
 
 .cta .cta-btn {
@@ -1148,6 +1155,7 @@ section {
 .faq .faq-list p {
   margin-bottom: 20px;
   font-size: 15px;
+  max-width: 65ch;
 }
 
 .faq .faq-list a.collapse {
