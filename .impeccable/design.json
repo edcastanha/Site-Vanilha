@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-07-06T22:56:07Z",
+  "title": "Design System: ITS3",
+  "extensions": {
+    "colorMeta": {
+      "primary": { "role": "primary", "displayName": "Vermelho ITS3", "canonical": "#e2231a", "tonalRamp": ["#2b0806", "#4c0e0a", "#7a1712", "#a81e17", "#e2231a", "#ff4436", "#ff8478", "#ffc4bd"] },
+      "primary-hover": { "role": "primary", "displayName": "Vermelho Aceso", "canonical": "#ff4436", "tonalRamp": ["#330d09", "#5c1710", "#912619", "#c53420", "#ff4436", "#ff7862", "#ffa694", "#ffd6cc"] },
+      "accent-confetti": { "role": "secondary", "displayName": "Coral Confete", "canonical": "#ff8a3d", "tonalRamp": ["#331a08", "#5c2f0e", "#914b16", "#c56920", "#ff8a3d", "#ffab72", "#ffc9a3", "#ffe6d2"] },
+      "bg-base": { "role": "neutral", "displayName": "Preto Pista", "canonical": "#0b0c0f", "tonalRamp": ["#000000", "#0b0c0f", "#15171c", "#1c1f26", "#2a2d35", "#4a4d57", "#8a8d97", "#c7c9d1"] },
+      "surface": { "role": "neutral", "displayName": "Cinza-Chumbo", "canonical": "#15171c", "tonalRamp": ["#000000", "#0b0c0f", "#15171c", "#1c1f26", "#2a2d35", "#4a4d57", "#8a8d97", "#c7c9d1"] },
+      "surface-card": { "role": "neutral", "displayName": "Cinza-Grafite", "canonical": "#1c1f26", "tonalRamp": ["#000000", "#0b0c0f", "#15171c", "#1c1f26", "#2a2d35", "#4a4d57", "#8a8d97", "#c7c9d1"] },
+      "ink": { "role": "neutral", "displayName": "Branco-Gelo", "canonical": "#eef0f3", "tonalRamp": ["#15171c", "#2a2d35", "#4a4d57", "#8a8d97", "#c7c9d1", "#dcdee2", "#eef0f3", "#ffffff"] },
+      "ink-body": { "role": "neutral", "displayName": "Cinza-Névoa", "canonical": "#c7c9d1", "tonalRamp": ["#15171c", "#2a2d35", "#4a4d57", "#8a8d97", "#9a9da6", "#c7c9d1", "#dcdee2", "#eef0f3"] },
+      "ink-muted": { "role": "neutral", "displayName": "Cinza-Fumaça", "canonical": "#9a9da6", "tonalRamp": ["#15171c", "#2a2d35", "#4a4d57", "#6f727c", "#9a9da6", "#c7c9d1", "#dcdee2", "#eef0f3"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Título principal da hero (#hero h2), sempre uppercase." },
+      "headline": { "displayName": "Headline", "purpose": "Título grande de cada seção (.section-title p), uppercase." },
+      "label": { "displayName": "Label", "purpose": "Kicker vermelho acima de cada headline e itens de navegação, uppercase." },
+      "body": { "displayName": "Body", "purpose": "Texto corrido, limitado a max-width: 65ch." }
+    },
+    "shadows": [
+      { "name": "glow-interaction", "value": "0 2px 20px rgba(226, 35, 26, 0.3)", "purpose": "Hover de cards (equipe, service icon-box) — sinaliza interatividade sem sombra escura tradicional." },
+      { "name": "structural-rest", "value": "0px 2px 15px rgba(0, 0, 0, 0.35)", "purpose": "Repouso sob cards elevados (contato, equipe, portfolio-details) para separá-los levemente do fundo." }
+    ],
+    "motion": [
+      { "name": "ease-standard", "value": "ease-in-out", "purpose": "Transições padrão de hover/estado em toda a interface (0.3s–0.5s)." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "768px" },
+      { "name": "md", "value": "992px" },
+      { "name": "lg", "value": "1366px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button (CTA)",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "CTA principal da hero e da seção CTA — único elemento com corte diagonal (clip-path).",
+      "html": "<a href=\"#\" class=\"ds-btn-primary\">Saiba Mais</a>",
+      "css": ".ds-btn-primary { display: inline-block; font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 1.5px; text-transform: uppercase; padding: 14px 34px 14px 26px; border-radius: 4px; clip-path: polygon(0 0, 100% 0, 100% 70%, 92% 100%, 0 100%); background: #e2231a; color: #ffffff; border: 2px solid #e2231a; transition: 0.3s; } .ds-btn-primary:hover, .ds-btn-primary:focus-visible { background: #ffffff; color: #e2231a; } .ds-btn-primary:focus-visible { outline: 2px solid #ff4436; outline-offset: 2px; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Botão secundário de borda (ex. .btn-learn-more) — preenche de vermelho sólido no hover.",
+      "html": "<a href=\"#\" class=\"ds-btn-ghost\">Ler Mais</a>",
+      "css": ".ds-btn-ghost { display: inline-block; font-family: 'Raleway', sans-serif; font-weight: 600; font-size: 14px; letter-spacing: 1px; padding: 12px 32px; border-radius: 5px; border: 2px solid #e2231a; color: #e2231a; background: transparent; transition: 0.3s; } .ds-btn-ghost:hover, .ds-btn-ghost:focus-visible { background: #e2231a; color: #ffffff; }"
+    },
+    {
+      "name": "Nav Link",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Item de navegação do header — formato pílula, vermelho sólido só em hover/ativo.",
+      "html": "<a href=\"#\" class=\"ds-nav-link\">Projetos</a>",
+      "css": ".ds-nav-link { display: inline-block; font-family: 'Titillium Web', sans-serif; font-weight: 600; font-size: 14px; letter-spacing: 0.4px; text-transform: uppercase; color: #ffffff; padding: 5px 15px 7px 15px; border-radius: 50px; transition: 0.3s; } .ds-nav-link:hover, .ds-nav-link:focus-visible { background: #e2231a; }"
+    },
+    {
+      "name": "Surface Card",
+      "kind": "card",
+      "refersTo": "card-surface",
+      "description": "Card de conteúdo (contato, equipe, portfolio-details) — glow vermelho no hover.",
+      "html": "<div class=\"ds-card\"><h3>Localização</h3><p>Jarinu / SP</p></div>",
+      "css": ".ds-card { background: #1c1f26; color: #eef0f3; border-radius: 10px; padding: 30px; box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.35); transition: box-shadow 0.3s; } .ds-card:hover { box-shadow: 0 2px 20px rgba(226, 35, 26, 0.3); } .ds-card p { color: #9a9da6; }"
+    },
+    {
+      "name": "ITS3 Logo",
+      "kind": "custom",
+      "refersTo": "logo-badge",
+      "description": "Wordmark do header recriado em HTML/CSS a partir do logo real do Instagram (@its3.br): 'ITS' branco + badge vermelho do '3'.",
+      "html": "<a href=\"#\" class=\"ds-logo\">ITS<span class=\"ds-logo-badge\">3</span></a>",
+      "css": ".ds-logo { display: inline-flex; align-items: center; gap: 3px; font-family: 'Raleway', sans-serif; font-size: 26px; font-weight: 800; letter-spacing: 1px; color: #ffffff; text-decoration: none; } .ds-logo-badge { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 6px; background: #e2231a; color: #ffffff; font-size: 16px; line-height: 1; }"
+    },
+    {
+      "name": "Hero Tag",
+      "kind": "chip",
+      "refersTo": null,
+      "description": "Chip com a hashtag real da marca (#JuntosSomosMaisFortes), acima do título da hero.",
+      "html": "<span class=\"ds-hero-tag\">#JuntosSomosMaisFortes</span>",
+      "css": ".ds-hero-tag { display: inline-block; padding: 6px 18px; border: 1px solid rgba(226, 35, 26, 0.5); border-radius: 50px; color: #ff8a3d; font-family: 'Titillium Web', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "O Box de Corrida",
+    "overview": "O sistema visual da ITS3 é o box de uma equipe de corrida à noite: escuro, funcional, sem enfeite — e um único vermelho de alta visibilidade que marca onde a ação acontece (o CTA, o estado ativo, o alerta). Nada aqui tenta parecer acolhedor ou 'amigável'; a marca vende hardware de precisão (volantes, aros, bases F4R) para simracers e pilotos, então a interface deve comunicar seriedade técnica antes de qualquer coisa. O laranja/coral do confete do logo aparece raramente, como uma luz secundária de painel — nunca como protagonista. Este sistema rejeita explicitamente a estética de 'landing page de agência': fundo branco, botões pill em tom pastel, sombras azuladas suaves, tipografia genérica de SaaS (Open Sans/Inter).",
+    "keyCharacteristics": [
+      "Fundo quase preto (#0b0c0f) em toda a página; nunca branco.",
+      "Vermelho (#e2231a) como único acento de ação; usado com moderação deliberada.",
+      "Cards angulares e diretos — cantos majoritariamente retos, com corte diagonal (clip-path) reservado aos CTAs principais.",
+      "Tipografia técnica (Titillium Web no corpo) em vez de fontes de SaaS genérico.",
+      "Profundidade via glow vermelho sutil no hover, não sombra tradicional."
+    ],
+    "rules": [
+      { "name": "A Regra do Vermelho Único", "body": "Existe apenas um acento de ação por vez: vermelho. O coral fica para elementos puramente decorativos, nunca acionáveis.", "section": "colors" },
+      { "name": "A Regra do Peso, Não do Tamanho", "body": "A hierarquia agressiva vem de peso (800/700) e uppercase, não de tamanhos gigantes.", "section": "typography" },
+      { "name": "A Regra do Painel Aceso", "body": "Nada 'flutua' por padrão. Estados de repouso são quase planos; o glow vermelho só aparece como resposta a hover/focus.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do usar #0b0c0f como fundo de página em toda seção nova.",
+      "Do reservar o vermelho (#e2231a) para exatamente um elemento de ação por componente.",
+      "Do usar o corte diagonal (clip-path) apenas nos CTAs primários da hero e da seção CTA.",
+      "Do manter parágrafos de corpo a max-width: 65ch.",
+      "Do manter contraste WCAG AA (≥4.5:1 texto normal, ≥3:1 texto grande) — validar com npx impeccable detect."
+    ],
+    "donts": [
+      "Don't usar fundo branco ou cinza-claro (#fff, #f8f8f8) em blocos de conteúdo.",
+      "Don't usar laranja/coral (#ff8a3d) em elementos clicáveis ou de ação.",
+      "Don't usar Open Sans, Inter, Roboto ou qualquer fonte 'de SaaS genérico' como fonte de corpo.",
+      "Don't usar sombras azuladas suaves (rgba(68, 88, 144, ...)) como estratégia de elevação.",
+      "Don't aplicar border-radius: 50px (pill) em CTAs de ação."
+    ]
+  }
+}
