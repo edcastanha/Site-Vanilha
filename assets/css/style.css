@@ -11,6 +11,7 @@
 html {
   background: #0b0c0f;
   line-height: 1.5;
+  overflow-x: hidden;
 }
 
 body {
@@ -18,6 +19,15 @@ body {
   background: #0b0c0f;
   color: #c7c9d1;
   line-height: 1.5;
+  overflow-x: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-aos] {
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
 }
 
 ::selection {
@@ -390,7 +400,7 @@ h1, h2, h3, h4, h5, h6 {
   padding-top: 60px;
 }
 
-#hero h2 {
+#hero h1 {
   color: #fff;
   margin-bottom: 20px;
   font-size: 52px;
@@ -399,7 +409,7 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 1px;
 }
 
-#hero h2 span {
+#hero h1 span {
   color: #ff4436;
 }
 
@@ -476,7 +486,7 @@ h1, h2, h3, h4, h5, h6 {
   #hero .carousel-container {
     height: 90vh;
   }
-  #hero h2 {
+  #hero h1 {
     font-size: 28px;
   }
 }
@@ -574,7 +584,7 @@ section {
   padding-bottom: 40px;
 }
 
-.section-title h2 {
+.section-title .kicker {
   font-size: 14px;
   font-weight: 700;
   padding: 0;
@@ -586,7 +596,7 @@ section {
   font-family: "Poppins", sans-serif;
 }
 
-.section-title h2::after {
+.section-title .kicker::after {
   content: "";
   width: 120px;
   height: 2px;
@@ -595,8 +605,7 @@ section {
   margin: 4px 10px;
 }
 
-.section-title p {
-  margin: 0;
+.section-title .headline {
   margin: 0;
   font-size: 36px;
   font-weight: 700;
@@ -608,30 +617,30 @@ section {
 /*--------------------------------------------------------------
 # About
 --------------------------------------------------------------*/
-.about {
+.sobre {
   padding-top: 80px;
 }
 
-.about .content h3 {
+.sobre .content h3 {
   font-weight: 600;
   font-size: 26px;
 }
 
-.about .content ul {
+.sobre .content ul {
   list-style: none;
   padding: 0;
 }
 
-.about .content ul li {
+.sobre .content ul li {
   padding-left: 28px;
   position: relative;
 }
 
-.about .content ul li + li {
+.sobre .content ul li + li {
   margin-top: 10px;
 }
 
-.about .content ul i {
+.sobre .content ul i {
   position: absolute;
   left: 0;
   top: 2px;
@@ -640,15 +649,15 @@ section {
   line-height: 1;
 }
 
-.about .content p {
+.sobre .content p {
   max-width: 65ch;
 }
 
-.about .content p:last-child {
+.sobre .content p:last-child {
   margin-bottom: 0;
 }
 
-.about .content .btn-learn-more {
+.sobre .content .btn-learn-more {
   font-family: "Raleway", sans-serif;
   font-weight: 600;
   font-size: 14px;
@@ -665,7 +674,7 @@ section {
   border: 2px solid #e2231a;
 }
 
-.about .content .btn-learn-more:hover {
+.sobre .content .btn-learn-more:hover {
   background: #e2231a;
   color: #fff;
   text-decoration: none;
@@ -1397,6 +1406,35 @@ section {
   color: #fff;
 }
 
+.contact .info .social-cta {
+  margin-top: 30px;
+}
+
+.contact .info .btn-instagram {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: 4px;
+  clip-path: polygon(0 0, 100% 0, 100% 70%, 92% 100%, 0 100%);
+  background: #e2231a;
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: 0.3s;
+}
+
+.contact .info .btn-instagram i {
+  font-size: 18px;
+}
+
+.contact .info .btn-instagram:hover {
+  background: #ff4436;
+  color: #fff;
+}
+
 .contact .php-email-form {
   width: 100%;
   background: #fff;
@@ -1481,6 +1519,13 @@ section {
 
 .contact .php-email-form button[type="submit"]:hover {
   background: #ff4436;
+}
+
+.contact .form-group iframe {
+  width: 100%;
+  max-width: 600px;
+  height: 250px;
+  border-radius: 8px;
 }
 
 @-webkit-keyframes animate-loading {
